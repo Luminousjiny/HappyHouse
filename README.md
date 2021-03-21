@@ -1,7 +1,3 @@
-<center><img src="https://user-images.githubusercontent.com/72757829/111917174-dd3cc280-8ac1-11eb-9f10-680f3c4275e3.jpg" width="300" height="100"></center>     
-
-# 🏠 HAPPYHOUSE   
-
 <p align="center">
   <img width="300px;" src="https://user-images.githubusercontent.com/72757829/111917174-dd3cc280-8ac1-11eb-9f10-680f3c4275e3.jpg" />
   <br/><h1 align="center"> HAPPYHOUSE </h1>
