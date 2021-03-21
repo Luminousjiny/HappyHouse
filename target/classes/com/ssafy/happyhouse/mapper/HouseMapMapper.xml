@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.mapper.HouseMapMapper">
+
+	<select id="getSido" resultType="SidoGugunCodeDto">
+		SELECT left(sido_code,2) sido_code, sido_name 
+		FROM sidocode
+		ORDER BY sido_code
+	</select>
+	
+	<select id="getGugunInSido" resultType="SidoGugunCodeDto">
+		SELECT left(gugun_code,5) gugun_code, gugun_name 
+		FROM guguncode
+		where left(gugun_code,2) = #{sido}
+		ORDER BY gugun_code
+	</select>
+	
+	<select id="getDongInGugun" resultType="SidoGugunCodeDto">
+		SELECT right(dongcode,5) dongcode, dong
+		FROM dongcode
+		where left(dongcode,5) = #{gugun_code};
+	</select>
+	
+	<select id="getAptInDong" resultMap="rrr">
+		select d.no, i.lat, i.lng, d.AptName, d.dealAmount, d.buildYear, d.dealMonth, d.dealDay, d.area, d.floor, d.jibun
+		from houseinfo i join housedeal d
+		on i.code = d.code and i.aptname = d.aptname
+		where i.code = #{dong_code}
+	</select>
+	
+	<!-- 아파트 이름으로 검색했을 시, join하는  부분 -->
+	<select id="getAptInfoByName" resultMap="rrr">
+		select d.no, i.lat, i.lng, d.AptName, d.dealAmount, d.buildYear, d.dealMonth, d.dealDay, d.area, d.floor, d.jibun
+		from houseinfo i join housedeal d
+		using(aptName)
+		where i.aptname like CONCAT('%',#{aptName},'%')
+	</select>
+	
+	<resultMap type="HouseInfoDto" id="rrr">
+        <result property="no" column="no"/>
+        <result property="dong" column="dong"/>
+        <result property="aptName" column="aptName"/>
+        <result property="lat" column="lat"/>
+        <result property="lng" column="lng"/>
+        <association property="houseDealDto" javaType="HouseDealDto">
+            <result property="aptName" column="aptName"/>
+            <result property="dealAmount" column="dealAmount"/>
+            <result property="buildYear" column="buildYear"/>
+            <result property="dealYear" column="dealYear"/>
+            <result property="dealMonth" column="dealMonth"/>
+            <result property="area" column="area"/>
+            <result property="floor" column="floor"/>
+            <result property="jibun" column="jibun"/>
+        </association>
+    </resultMap>
+</mapper>

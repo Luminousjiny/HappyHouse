@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.mapper.QnaMapper">
+
+	<select id="selectQList" resultType="QnaDto">
+	select *
+	from qna
+	</select>
+	
+	<select id="searchQList" resultType="QnaDto">
+	select *
+	from qna
+	where qtitle LIKE CONCAT('%',#{keyword},'%')
+	or qcontent LIKE CONCAT('%',#{keyword},'%')
+	</select>
+	
+	<select id="detailQna" resultType="QnaDto">
+	select *
+	from qna
+	where qnum = #{qnum}
+	</select>
+	
+	<insert id="insertQna" parameterType="QnaDto">
+	insert into qna(qtitle, qwriter, qwritedate, qcontent)
+	values (#{qtitle}, #{qwriter}, now(), #{qcontent})
+	</insert>
+	
+	<update id="updateQna" parameterType="QnaDto">
+	update qna 
+	set qtitle = #{qtitle}, qwritedate = now(), qcontent = #{qcontent}
+	where qnum = #{qnum}
+	</update>
+	
+	<delete id="deleteQna" parameterType="int">
+	delete from qna
+	where qnum = #{qnum}
+	</delete>
+	
+</mapper>

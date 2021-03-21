@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.mapper.MemberMapper">
+	
+	<select id="login" parameterType="MemberDto" resultType="MemberDto">
+	select userid, username, admin, email, phone, joindate
+	from member
+	where userid=#{userid} and userpwd=#{userpwd}
+	</select>
+
+	<select id="checkId" resultType="String">
+	select userid
+	from member
+	where userid=#{userid}
+	</select>
+	
+	<insert id="join" parameterType="MemberDto">
+	insert into member(userid, userpwd, email, joindate, username, phone) 
+	values (#{userid}, #{userpwd}, #{email}, now(), #{username}, #{phone});
+	</insert>
+	
+	<select id="getUserInfo" resultType="MemberDto">
+	select userid, username, email, phone, joindate
+	from member
+	where userid = #{userid}
+	</select>
+	
+	<update id="update" parameterType="MemberDto">
+	update member set username=#{username}, userpwd=#{userpwd}, email=#{email}, phone=#{phone}
+	where userid=#{userid} and userpwd=#{userpwd}
+	</update>
+	
+	<select id="adminCheck" resultType="MemberDto">
+	select *
+	from member
+	where userid=#{userid} and admin=1
+	</select>
+	
+	<!--  회원관리  ///////////////////////////////////////////////////////// -->
+	<select id="selectUList" resultType="MemberDto">
+	select *
+	from member
+	</select>
+	
+	<select id="searchUList" resultType="MemberDto">
+	select *
+	from member
+	where userid LIKE CONCAT('%',#{keyword},'%')
+	or username LIKE CONCAT('%',#{keyword},'%')
+	or email LIKE CONCAT('%',#{keyword},'%')
+	or phone LIKE CONCAT('%',#{keyword},'%')
+	
+	</select>
+	
+	<select id="detailUser" resultType="MemberDto">
+	select *
+	from member
+	where userid = #{userid}
+	</select>
+	
+	<insert id="insertUser" parameterType="MemberDto">
+	insert into member(userid, userpwd, username, email, admin, phone, joindate)
+	values (#{userid}, #{userpwd},#{username},#{email}, 0, #{phone}, now())
+	</insert>
+	
+	<update id="updateUser" parameterType="MemberDto">
+	update member
+	set userid = #{userid}, userpwd=#{userpwd}, username=#{username}, 
+		email=#{email}, phone=#{phone}
+	where userid = #{userid}
+	</update>
+	
+	<delete id="deleteUser" parameterType="String">
+	delete from member
+	where userid = #{userid}
+	</delete>
+</mapper>

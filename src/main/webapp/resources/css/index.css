@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+body p{margin: 0 auto; padding: 0; }
+
+body{
+	font: 15px/22px Helvetica, Arial, sans-serif;
+	min-height: 100%;
+}
+
+section{
+	clear: both;
+	text-align: center;
+	border: 1px solid white;
+	display: block;
+}
+
+.text{
+	margin-top:100px;
+}
+
+form{
+	padding-top: 50px;
+	padding-bottom: 100px;
+}
+
+ #text1, #text3{
+ 	font-size: 25px;
+ 	font-weight: bold;
+ 	line-height: 35px;
+ }
+
+ #text2{
+ 	font-size: 25px;
+ 	font-weight: bold;
+ 	color: #1478CD;
+ 	line-height: 25px;
+ }
+ 
+ #filter{
+ 	margin-top: 30px;
+ }
+
+select, input{
+	padding: 10px;
+	border: 1px solid lightgray;
+}
+
+#btnSubmit{
+	background-color: #1478CD;
+	color : white;
+	border-radius: 10px;
+}
+
+#searchByName{
+	width: 250px;
+	border: 1px solid lightgray;
+}
+
+#demo{
+	margin-top: -50px;
+}

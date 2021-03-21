@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+.logo{
+	float:left;
+}
+.menu{
+	float:right;
+}
+
+#logo{
+	width: 40px;
+	height: auto;
+}
+
+header{margin: 10px;}
+
+.default, .user{
+	background-color: transparent;
+	border: 0px solid black;
+	color: darkgray;
+	height: 30px;
+	line-height: 10px;
+	padding: 3px;
+	margin-right: 5px;
+}
+
+.modal-title{
+	margin-bottom: 30px;
+}
+
+.modal-content{
+	border-radius: 20px;
+}
+
+.modal-content.login{
+	!important;
+	width: 400px;
+	text-align: center;
+	height:420px;
+	position: relatived;
+	margin: 0px auto;
+	top: 200px;
+}
+
+.modal-content.join{
+	!important;
+	width: 400px;
+	text-align: center;
+	height:530px;
+	position: relatived;
+	margin: 0px auto;
+	top: 200px;
+}
+
+.modal-body input{
+	width:300px;
+	border-radius: 8px;
+	margin: 10px;
+}
+
+#submit{
+	width: 300px;
+	background-color: #1478CD;
+	color: white;
+	margin: 30px;
+	height: 50px;
+}
+
+#pwReset{
+	text-align: right;
+	background-color: white;
+	color: darkgray;
+	border: 0px;
+	font-size: 12px;
+	float: right;
+	margin-right: 28px;
+}
+
+#phone1, #phone2, #phone3{
+	display: inline-block;
+	width: 90px;
+	margin: 2px;
+}
+
+#phone1{
+	border-radius: 10px;
+}
+
+.join #userNickname {
+	width: 185px;
+	display: inline-block;
+}
+
+.join #idcheck{
+	width: 100px;
+	height: 45px;
+	display: inline-block;
+	background-color: lightgray;
+	color: white;
+}
+

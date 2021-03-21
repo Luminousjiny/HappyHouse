@@ -1,0 +1,68 @@
+@charset "UTF-8";
+	section{
+		clear: both;
+	}
+	h2{
+		text-align: center;
+		margin: 50px;
+		color: #1478CD;
+		font-weight: bold;
+	}
+	#changebox{
+		display:block; 
+		width:350px; 
+		margin: 0 auto;
+	}
+	#out{
+		text-align: center;
+	}
+	#changebox button{
+		float: right;
+		height: 28px;
+		width: 100px;
+		margin-right: 10px;
+		margin-bottom:15px;
+		background-color: #1478CD;
+		border: 0px;
+		font-size: 12px;
+	}
+	#out button{
+		margin: 0 auto;
+		width: 200px;
+		background-color: #9BC3FF;
+		border: 0px;
+		margin-bottom: 30px;
+	}
+	#phone2, #phone3{
+		width: 110px;
+		display: inline-block;
+		margin-right: 3px;
+	}
+	#phone1{
+		width: 90px;
+		height: 35px;
+		margin-right: 3px;
+		margin-left:3px;
+		display: inline-block;
+		border: 1px solid lightgray;
+	}
+	img{
+		border-radius: 60%;
+		width: 100px;
+		height: 100px;
+		margin: 0 auto;
+		margin-top:30px;
+		margin-bottom:10px;
+		display: block;
+	}
+	#imgtext{
+		text-align: center;
+		color: darkgray;
+		margin-bottom: 20px;
+		font-size: 13px;
+	}
+	hr{
+		margin-top: 10px;
+		display:block;
+		clear: both;
+	}

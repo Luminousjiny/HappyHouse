@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="ds" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/happyhousefinal?serverTimezone=UTC&amp;useUniCode=yes&amp;characterEncoding=UTF-8"/> <!-- db이름확인 -->
+		<property name="username" value="ssafy"/>
+		<property name="password" value="ssafy"/>
+	</bean>
+	
+	<bean id="ssfb" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds"/>
+		<property name="typeAliasesPackage" value="com.ssafy.happyhouse.dto"/> <!-- 바뀌는 부분 -->
+		<property name="mapperLocations" value="classpath:/**/mapper/*.xml"/><!-- xml을 먼저 읽어들이고, 그 안에 namespace에 적혀있는 인터페이스도 읽어들임 -->
+	</bean>
+	
+	<!-- mybatis 총괄하는 애 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="ssfb"/>
+	</bean>
+</beans>
