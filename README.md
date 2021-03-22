@@ -20,7 +20,7 @@
 
 
 
-### 📑 설계서      
+## 📑 설계서      
 https://github.com/Luminousjiny/HappyHouse/blob/5542011255a32f4ab7aff5618bba5a5550df6564/%EC%82%B0%EC%B6%9C%EB%AC%BC/HappyHouse_%EC%84%A4%EA%B3%84%EC%84%9C.docx      
 
 - __ERD 테이블 구조__   
@@ -30,7 +30,7 @@ https://github.com/Luminousjiny/HappyHouse/blob/5542011255a32f4ab7aff5618bba5a55
 ![image](https://user-images.githubusercontent.com/72757829/112012352-7b856280-8b6c-11eb-8de3-f8421ba3a290.png)     
 
 
-### 📑 보고서   
+## 📑 보고서   
 https://github.com/Luminousjiny/HappyHouse/blob/5542011255a32f4ab7aff5618bba5a5550df6564/%EC%82%B0%EC%B6%9C%EB%AC%BC/HappyHouse_%EC%B5%9C%EC%A2%85%20%EB%B3%B4%EA%B3%A0%EC%84%9C.pptx    
 
 - __기술스택__
@@ -50,7 +50,7 @@ https://github.com/Luminousjiny/HappyHouse/blob/5542011255a32f4ab7aff5618bba5a55
 ![슬라이드9](https://user-images.githubusercontent.com/72757829/112012147-4aa52d80-8b6c-11eb-9075-a6f0246f6105.JPG)
 
 
-### 📑 실행 화면
+## 💻 실행 화면
 1. 메인페이지     
 ![image](https://user-images.githubusercontent.com/72757829/112012703-c4d5b200-8b6c-11eb-8dc7-4410ac952534.png)     
 > 최근 본 목록 사이드 바      
